@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-  pull-request:
-    branches:
-      - main
+
   workflow_dispatch:
 
 
@@ -24,4 +22,4 @@ jobs:
     steps:
       - name: goodbye world
         run: echo "goodybe world"
-        shell: bash 
+        shell: bash
