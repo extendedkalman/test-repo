@@ -25,9 +25,10 @@ jobs:
         shell: bash
   
   test:
+    needs: [hello goodbye]
     runs-on: windows
     steps:
-      - name: "test powershell"
+      - name: test powershell
         shell: powershell
         run: |
 	  Write-Output "Hello World 123"
