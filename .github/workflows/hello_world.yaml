@@ -26,6 +26,7 @@ jobs:
 
   test:
     needs: [hello, goodbye]
+    runs-on: x64
     steps:
       - name: test powershell
         shell: powershell
