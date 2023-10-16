@@ -25,7 +25,7 @@ jobs:
         shell: bash
 
   test:
-    needs: [hello goodbye]
+    needs: [hello, goodbye]
     runs-on: windows
     steps:
       - name: test powershell
