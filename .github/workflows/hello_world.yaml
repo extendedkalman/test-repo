@@ -23,7 +23,7 @@ jobs:
       - name: goodbye world
         run: echo ${{ github.workspace }}
         shell: bash
-  
+
   test:
     needs: [hello goodbye]
     runs-on: windows
@@ -31,4 +31,4 @@ jobs:
       - name: test powershell
         shell: powershell
         run: |
-	  Write-Output "Hello World 123"
+          Write-Output "Hello World 123"
