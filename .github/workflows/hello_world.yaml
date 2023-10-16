@@ -23,3 +23,9 @@ jobs:
       - name: goodbye world
         run: echo ${{ github.workspace }}
         shell: bash
+  
+  test:
+    name: "test powershell"
+    shell: powershell
+    run: |
+      Write-Output "Hello World 123"
