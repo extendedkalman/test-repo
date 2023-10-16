@@ -26,7 +26,7 @@ jobs:
   
   test:
     steps:
-	    name: "test powershell"
-	    shell: powershell
-	    run: |
-	      Write-Output "Hello World 123"
+      name: "test powershell"
+      shell: powershell
+      run: |
+	Write-Output "Hello World 123"
