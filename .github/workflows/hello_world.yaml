@@ -29,6 +29,16 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: test powershell
+        id: test-powershell
         shell: powershell
         run: |
-          Write-Output "Hello World 123"
+          Write-Output "path=Hello World 123"
+
+  test2:
+    needs: [test]
+    runs-on: windows-latest
+    steps:
+      - name: test2 powershell
+        shell: powershell
+        run: |
+          Write Output "${{ jobs.steps.test-powershell.outputs.path }}"
