@@ -1,0 +1,13 @@
+name: 'Hello World Action'
+description: 'Prints a Hello World message'
+
+inputs:
+  message:
+    description: 'The message to display'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+  - run: echo "${{ inputs.message }}"
+
