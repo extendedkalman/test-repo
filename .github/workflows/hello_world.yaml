@@ -43,19 +43,3 @@ jobs:
         run: |
           Write Output "${{ steps.test-powershell.outputs.path }}"
 
-  create-dir:
-    runs-on: windows-latest
-    steps:
-      - name: create dir
-        shell: powershell
-        run: |
-          mkdir testdir
-
-  in-dir:
-    needs: [create-dir]
-    runs-on: windows-latest
-    steps:
-      - name: in dir
-        shell: powershell
-        run: |
-          cd testdir
