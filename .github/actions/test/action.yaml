@@ -10,4 +10,4 @@ runs:
   using: 'composite'
   steps:
   - run: echo "${{ inputs.message }}"
-
+    shell: bash
