@@ -1,0 +1,15 @@
+name: Özel GitHub Action Kullanımı
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Repo'yu Çek
+      uses: actions/checkout@v2
+      
+    - name: Özel Action'ı Kullan
+      uses: extendedkalman/testrepo/.github/actions/hello-world-action@v1
+      with:
+        message: "Merhaba, Dünya!"
