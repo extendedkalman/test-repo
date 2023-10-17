@@ -9,7 +9,7 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
 
-    - name: Özel Action'ı Kullan
+    - name: action usage
       uses: ./actions/action
       with:
         message: "Merhaba, Dünya!"
