@@ -41,7 +41,7 @@ jobs:
       - name: test2 powershell
         shell: powershell
         run: |
-          Write Output "${{ jobs.steps.test-powershell.outputs.path }}"
+          Write Output "${{ steps.test-powershell.outputs.path }}"
 
   create-dir:
     runs-on: windows-latest
