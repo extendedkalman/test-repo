@@ -44,7 +44,7 @@ jobs:
           Write Output "${{ steps.test-powershell.outputs.path }}"
 
   directory-change:
-    runs-om: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: creating directory step
         run: mkdir test
