@@ -10,6 +10,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Özel Action'ı Kullan
-      uses: extendedkalman/test-repo/.github/workflows/hello_world@v1
+      uses: extendedkalman/test-repo/.github/actions/action@v1
       with:
         message: "Merhaba, Dünya!"
