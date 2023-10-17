@@ -51,7 +51,7 @@ jobs:
         shell: bash
 
       - name: changing directory step
-        run: chdir test
+        run: cd test
         shell: bash
 
       - name: listing directory
