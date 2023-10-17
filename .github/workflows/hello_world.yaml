@@ -55,5 +55,5 @@ jobs:
         shell: bash
 
       - name: listing directory
-        run: ll
+        run: ls
         shell: bash
