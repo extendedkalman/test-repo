@@ -1,6 +1,6 @@
 name: hello world workflow
 
-on:
+off:
   push:
     branches:
       - main

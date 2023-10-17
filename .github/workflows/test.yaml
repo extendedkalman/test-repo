@@ -1,4 +1,4 @@
-name: Özel GitHub Action Kullanımı
+name: usage
 
 on: [push]
 
@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Repo'yu Çek
+    - name: checkout repo
       uses: actions/checkout@v2
 
     - name: Özel Action'ı Kullan
