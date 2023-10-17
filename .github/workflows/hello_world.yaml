@@ -48,9 +48,12 @@ jobs:
     steps:
       - name: creating directory step
         run: mkdir test
+        shell: bash
 
       - name: changing directory step
         run: chdir test
+        shell: bash
 
       - name: listing directory
         run: ll
+        shell: bash
