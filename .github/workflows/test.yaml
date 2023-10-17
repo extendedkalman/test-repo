@@ -8,8 +8,8 @@ jobs:
     steps:
     - name: Repo'yu Çek
       uses: actions/checkout@v2
-      
+
     - name: Özel Action'ı Kullan
-      uses: extendedkalman/testrepo/.github/actions/hello-world-action@v1
+      uses: extendedkalman/test-repo/.github/actions/hello-world-action@v1
       with:
         message: "Merhaba, Dünya!"
