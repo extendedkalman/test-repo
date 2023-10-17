@@ -1,6 +1,6 @@
 name: hello world workflow
 
-off:
+on:
   push:
     branches:
       - main
@@ -43,3 +43,14 @@ jobs:
         run: |
           Write Output "${{ steps.test-powershell.outputs.path }}"
 
+  directory-change:
+    runs-om: ubuntu-latest
+    steps:
+      - name: creating directory step
+        run: mkdir test
+
+      - name: changing directory step
+        run: chdir test
+
+      - name: listing directory
+        run: ll
