@@ -12,7 +12,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/test-repo
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -21,7 +23,7 @@ jobs:
 
       - name: Run Python Script
         run: |
-          $scriptPath=.\src\hello.py
+          $scriptPath=. ${{ github.workspace }}/test-repo/src/hello.py
           python $scriptPath
 
   #        python $scriptPath
