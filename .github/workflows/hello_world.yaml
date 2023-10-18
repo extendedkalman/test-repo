@@ -58,7 +58,7 @@ jobs:
       - name: testing output
         shell: powershell
         run: |
-          Write-Output "${{ steps.test-powershell.outputs.path }}"
+          Write-Output "${{ steps.test-powershell.outputs. }}"
 
   #  test2:
   #    needs: [test]
