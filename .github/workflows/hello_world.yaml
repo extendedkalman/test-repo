@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Python Script
         run: |
-          $scriptPath=./src/hello.py
+          $scriptPath=.\test-repo\src\hello.py
           python $scriptPath
 
   #        python $scriptPath
