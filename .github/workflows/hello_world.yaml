@@ -27,9 +27,6 @@ jobs:
           $scriptPath=.\test-repo\src\hello.py
           python $scriptPath
 
-  test-uses:
-    runs-on: windows-latest
-    steps:
       - name: test uses action file
         uses: ./test-repo/actions/test
         with:
