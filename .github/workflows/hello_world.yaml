@@ -13,18 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: hello world
-        run: echo "checking out the repo"
-        shell: bash
 
       - name: Set up Python
-          uses: actions/setup-python@v2
-          with:
-            python-version: 3.x  # Python sürümünü belirtin
-      
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 # Python sürümünü belirtin
+
       - name: testing py
-        shell: powershell
         run: |
-          python ./src/hello.py
+          scriptPath = "./src/python/test.py"
+          python $scriptPath
   #  goodbye:
   #    runs-on: ubuntu-latest
   #    steps:
@@ -50,5 +48,3 @@ jobs:
   #        shell: powershell
   #        run: |
   #          Write Output "${{ steps.test-powershell.outputs.path }}"
-
-      
