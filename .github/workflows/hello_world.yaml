@@ -7,46 +7,48 @@ on:
 
   workflow_dispatch:
 
-
 jobs:
-#  hello:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: hello world
-#        run: echo "Hello world"
-#        shell: bash
-
-#  goodbye:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: goodbye world
-#        run: echo ${{ github.workspace }}
-#        shell: bash
-
-#  test:
-#    needs: [hello, goodbye]
-#    runs-on: windows-latest
-#    steps:
-#      - name: test powershell
-#        id: test-powershell
-#        shell: powershell
-#        run: |
-#          Write-Output "path=Hello World 123"
-
-#  test2:
-#    needs: [test]
-#    runs-on: windows-latest
-#    steps:
-#      - name: test2 powershell
-#        shell: powershell
-#        run: |
-#          Write Output "${{ steps.test-powershell.outputs.path }}"
-
-  using-action:
-    runs-on: windows-latest
+  hello:
+    runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: hello world
+        run: echo "checking out the repo"
+        shell: bash
+
+      - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: 3.x  # Python sürümünü belirtin
+      
       - name: testing py
         shell: powershell
         run: |
           python ./src/hello.py
+  #  goodbye:
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: goodbye world
+  #        run: echo ${{ github.workspace }}
+  #        shell: bash
+
+  #  test:
+  #    needs: [hello, goodbye]
+  #    runs-on: windows-latest
+  #    steps:
+  #      - name: test powershell
+  #        id: test-powershell
+  #        shell: powershell
+  #        run: |
+  #          Write-Output "path=Hello World 123"
+
+  #  test2:
+  #    needs: [test]
+  #    runs-on: windows-latest
+  #    steps:
+  #      - name: test2 powershell
+  #        shell: powershell
+  #        run: |
+  #          Write Output "${{ steps.test-powershell.outputs.path }}"
+
+      
