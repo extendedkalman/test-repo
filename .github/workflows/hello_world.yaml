@@ -17,7 +17,6 @@ jobs:
       - name: Run PowerShell Script
         shell: pwsh
         run: |
-          # PowerShell betiği çalıştırma
           .\test.ps1
 
   #        python $scriptPath
