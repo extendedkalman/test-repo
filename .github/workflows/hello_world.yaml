@@ -46,7 +46,7 @@ jobs:
         with:
           message: "testing local include"
 
-    testing id:
+    testing-id:
       runs-on: windows-latest
       steps:
         - name: test powershell
