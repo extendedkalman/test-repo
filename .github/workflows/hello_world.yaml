@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: ${{ github.workspace }}/test-repo
+          repository: "extendedkalman/test-repo"
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -23,7 +24,7 @@ jobs:
 
       - name: Run Python Script
         run: |
-          $scriptPath=. ${{ github.workspace }}/test-repo/src/hello.py
+          $scriptPath=.\src\hello.py
           python $scriptPath
 
   #        python $scriptPath
