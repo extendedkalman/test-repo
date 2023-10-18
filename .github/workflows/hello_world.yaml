@@ -46,23 +46,19 @@ jobs:
         with:
           message: "testing local include"
 
-  #        python $scriptPath
-  #  goodbye:
-  #    runs-on: ubuntu-latest
-  #    steps:
-  #      - name: goodbye world
-  #        run: echo ${{ github.workspace }}
-  #        shell: bash
+    testing id:
+      runs-on: windows-latest
+      steps:
+        - name: test powershell
+          id: test-powershell
+          shell: powershell
+          run: |
+            Write-Output "path=Hello World 123"
 
-  #  test:
-  #    needs: [hello, goodbye]
-  #    runs-on: windows-latest
-  #    steps:
-  #      - name: test powershell
-  #        id: test-powershell
-  #        shell: powershell
-  #        run: |
-  #          Write-Output "path=Hello World 123"
+        - name: testing output
+          shell: powershell
+          run: |
+            Write-Output "${{ steps.test-powershell.outputs.path }}"
 
   #  test2:
   #    needs: [test]
