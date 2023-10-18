@@ -53,7 +53,7 @@ jobs:
         id: test-powershell
         shell: powershell
         run: |
-          path="Hello World 123"
+          $path="Hello World 123"
 
       - name: testing output
         shell: powershell
