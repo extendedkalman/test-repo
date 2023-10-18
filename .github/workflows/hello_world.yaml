@@ -41,6 +41,11 @@ jobs:
           path: ${{ github.workspace }}/test-repo2
           repository: "extendedkalman/test-repo2"
 
+      - name: test uses action file
+        uses: ./test-repo2/.github/actions/test
+        with:
+          message: "testing local include"
+
   #        python $scriptPath
   #  goodbye:
   #    runs-on: ubuntu-latest
