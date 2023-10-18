@@ -53,12 +53,12 @@ jobs:
         id: test-powershell
         shell: powershell
         run: |
-          Write-Output "path=Hello World 123"
+          path="Hello World 123"
 
       - name: testing output
         shell: powershell
         run: |
-          Write-Output "${{ steps.test-powershell.outputs. }}"
+          Write-Output "${{ steps.test-powershell.outputs.path }}"
 
   #  test2:
   #    needs: [test]
