@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: test uses action file
         uses: extededkalman/test-repo/actions/test
+        with:
+          message: "testing local include"
 
   #        python $scriptPath
   #  goodbye:
