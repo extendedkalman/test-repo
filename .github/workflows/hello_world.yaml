@@ -28,7 +28,7 @@ jobs:
           python $scriptPath
 
       - name: test uses action file
-        uses: ./test-repo/actions/test
+        uses: .\test-repo\.github\actions\test
         with:
           message: "testing local include"
 
