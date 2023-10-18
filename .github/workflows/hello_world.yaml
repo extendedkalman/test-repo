@@ -9,51 +9,44 @@ on:
 
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: hello world
-        run: echo "Hello world"
-        shell: bash
+#  hello:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: hello world
+#        run: echo "Hello world"
+#        shell: bash
 
-  goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: goodbye world
-        run: echo ${{ github.workspace }}
-        shell: bash
+#  goodbye:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: goodbye world
+#        run: echo ${{ github.workspace }}
+#        shell: bash
 
-  test:
-    needs: [hello, goodbye]
+#  test:
+#    needs: [hello, goodbye]
+#    runs-on: windows-latest
+#    steps:
+#      - name: test powershell
+#        id: test-powershell
+#        shell: powershell
+#        run: |
+#          Write-Output "path=Hello World 123"
+
+#  test2:
+#    needs: [test]
+#    runs-on: windows-latest
+#    steps:
+#      - name: test2 powershell
+#        shell: powershell
+#        run: |
+#          Write Output "${{ steps.test-powershell.outputs.path }}"
+
+  using-action:
     runs-on: windows-latest
     steps:
-      - name: test powershell
-        id: test-powershell
+      - name: testing py
         shell: powershell
         run: |
-          Write-Output "path=Hello World 123"
-
-  test2:
-    needs: [test]
-    runs-on: windows-latest
-    steps:
-      - name: test2 powershell
-        shell: powershell
-        run: |
-          Write Output "${{ steps.test-powershell.outputs.path }}"
-
-  directory-change:
-    runs-on: ubuntu-latest
-    steps:
-      - name: creating directory step
-        run: mkdir test
-        shell: bash
-
-      - name: changing directory step
-        run: cd test
-        shell: bash
-
-      - name: listing directory
-        run: pwd
-        shell: bash
+          python ./src/hello.py
