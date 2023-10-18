@@ -17,7 +17,7 @@ jobs:
       - name: Run PowerShell Script
         shell: pwsh
         run: |
-          .\src\test.ps1
+          .\src\hello.ps1
 
   #        python $scriptPath
   #  goodbye:
