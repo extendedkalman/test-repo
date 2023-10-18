@@ -8,20 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  hello:
-    runs-on: ubuntu-latest
+  run-script:
+    runs-on: windows-latest
     steps:
-      - name: hello world
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 # Python sürümünü belirtin
-
-      - name: testing py
+      - name: Run PowerShell Script
+        shell: pwsh
         run: |
-          scriptPath = "./src/python/test.py"
+          # PowerShell betiği çalıştırma
+          .\test.ps1
+
   #        python $scriptPath
   #  goodbye:
   #    runs-on: ubuntu-latest
