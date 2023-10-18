@@ -21,8 +21,8 @@ jobs:
 
       - name: testing py
         run: |
-          scriptPath = "${{ github.workspace }}/src/python/test.py"
-          python $scriptPath
+          scriptPath = "./src/python/test.py"
+  #        python $scriptPath
   #  goodbye:
   #    runs-on: ubuntu-latest
   #    steps:
