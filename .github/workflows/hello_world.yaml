@@ -14,10 +14,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run PowerShell Script
-        shell: pwsh
-        run: |
-          ./src/hello.ps1
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+    - name: Run Python Script
+      run: |
+        scriptPath=.\src\hello.py
+        python $scriptPath
 
   #        python $scriptPath
   #  goodbye:
