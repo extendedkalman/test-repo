@@ -32,6 +32,15 @@ jobs:
         with:
           message: "testing local include"
 
+  run-test-repo2:
+    runs-on: windows-latest
+    steps:
+      - name: checkout repo2
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.workspace }}/test-repo2
+          repository: "extendedkalman/test-repo2"
+
   #        python $scriptPath
   #  goodbye:
   #    runs-on: ubuntu-latest
