@@ -46,6 +46,11 @@ jobs:
         with:
           message: "testing local include"
 
+      - name: testing py file
+        run: python test_repo2/test.py
+        shell: bash
+          
+
   testing-id:
     runs-on: windows-latest
     steps:
@@ -53,7 +58,7 @@ jobs:
         id: test-powershell
         shell: powershell
         run: |
-          $path="Hello World 123"
+          Write-Output "path=Hello World 123"
 
       - name: testing output
         shell: powershell

@@ -3,15 +3,14 @@ import requests
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"
 repo_name = "test-repo"
-workflow_name = "your_workflow"
+workflow_name = "hello_world.yaml"
 
 # Personal Access Token (PAT)
-token = "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"
+token = "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"
 
 # GitHub API endpoint
 api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/actions/runners"
 
-# Başlıklar
 headers = {
     "Authorization": f"Bearer {token}",
     "Accept": "application/vnd.github.v3+json"
@@ -19,16 +18,15 @@ headers = {
 
 # Çalışan işleri sorgula
 response_running = requests.get(f"{api_url}/jobs?status=running", headers=headers)
-running_jobs = response_running.json()["jobs"]
 
-print("Çalışan İşler:")
-for job in running_jobs:
-    print(f"- Job ID: {job['id']}, Name: {job['name']}")
-
-# Sırada bekleyen işleri sorgula
-response_pending = requests.get(f"{api_url}/jobs?status=queued", headers=headers)
-pending_jobs = response_pending.json()["jobs"]
-
-print("\nSırada Bekleyen İşler:")
-for job in pending_jobs:
-    print(f"- Job ID: {job['id']}, Name: {job['name']}")
+# Yanıtın içeriğini kontrol et
+if response_running.status_code == 200:
+    try:
+        running_jobs = response_running.json()["jobs"]
+        print("Çalışan İşler:")
+        for job in running_jobs:
+            print(f"- Job ID: {job['id']}, Name: {job['name']}")
+    except KeyError as e:
+        print(f"Hata: JSON yapısında 'jobs' anahtarı bulunamadı. Detaylar: {e}")
+else:
+    print(f"Hata: {response_running.status_code} - {response_running.text}")
