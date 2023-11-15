@@ -1,7 +1,7 @@
 import requests
 import os
 
-api_secret = os.environ.get('API_SECRET', None)
+api_secret = os.environ.get('GITHUB_TOKEN', None)
 
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"

@@ -27,5 +27,5 @@ jobs:
 
       - name: Execute Test Script
         env:
-          API_SECRET: ${{ secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
         run: python ${{ env.DEVOPS_DIR }}/src/check.py
