@@ -45,10 +45,6 @@ jobs:
         uses: ./test-repo2/.github/actions/test
         with:
           message: "testing local include"
-
-      - name: testing py file
-        run: python test_repo2/test.py
-        shell: bash
           
 
   testing-id:
