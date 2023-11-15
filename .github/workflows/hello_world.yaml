@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-my-script:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     #env:
     #  API_SECRET: ${{ secrets.API }}
