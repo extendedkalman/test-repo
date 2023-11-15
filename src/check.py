@@ -1,5 +1,7 @@
 import requests
 import sys
+import os
+api_secret = os.environ.get('API_SECRET', None)
 
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"
@@ -7,7 +9,7 @@ repo_name = "test-repo"
 workflow_name = "hello world workflow"
 
 # Personal Access Token (PAT)
-token = sys.argv[1]
+token = api_secret
 
 # GitHub API endpoint
 api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/actions/runners"
