@@ -1,10 +1,6 @@
 name: hello world workflow
 
 on:
-  push:
-    branches:
-      - main
-
   workflow_dispatch:
 
 jobs:
