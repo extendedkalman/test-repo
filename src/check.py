@@ -24,10 +24,10 @@ response_running = requests.get(f"{api_url}/jobs?status=running", headers=header
 if response_running.status_code == 200:
     try:
         running_jobs = response_running.json()["jobs"]
-        print("Çalışan İşler:")
+        print("Running Jobs:")
         for job in running_jobs:
             print(f"- Job ID: {job['id']}, Name: {job['name']}")
     except KeyError as e:
-        print(f"Hata: JSON yapısında 'jobs' anahtarı bulunamadı. Detaylar: {e}")
+        print(f"error: {e}")
 else:
-    print(f"Hata: {response_running.status_code} - {response_running.text}")
+    print(f"error: {response_running.status_code} - {response_running.text}")
