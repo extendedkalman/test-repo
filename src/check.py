@@ -1,6 +1,6 @@
 import requests
-import sys
 import os
+
 api_secret = os.environ.get('API_SECRET', None)
 
 # GitHub deposu ve iş akışı bilgileri
@@ -21,6 +21,11 @@ headers = {
 
 # Çalışan işleri sorgula
 response_running = requests.get(f"{api_url}/jobs?status=running", headers=headers)
+
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 # Yanıtın içeriğini kontrol et
 if response_running.status_code == 200:
