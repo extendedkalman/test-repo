@@ -1,3 +1,5 @@
+print("TESTTTT")
+'''
 import requests
 import os
 
@@ -35,4 +37,4 @@ else:
     print(f"error: {response_running.status_code} - {response_running.text}")
 
 number = 2
-print(f"::set-output name=num_squared::{number}")
+'''
