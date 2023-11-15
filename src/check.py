@@ -6,7 +6,7 @@ repo_name = "test-repo"
 workflow_name = "hello world workflow"
 
 # Personal Access Token (PAT)
-token = "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"
+token = "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"
 
 # GitHub API endpoint
 api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/actions/runners"
