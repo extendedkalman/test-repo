@@ -29,7 +29,7 @@ jobs:
       - name: Run Python Script
         id: get_test
         run: |
-          $scriptPath=.\test-repo\src\hello.py
+          $scriptPath=./test-repo/src/hello.py
           python $scriptPath
 
       - name: Print the square
