@@ -21,6 +21,8 @@ headers = {
 
 response_running = requests.get(f"{api_url}/jobs?status=running", headers=headers)
 
+print(f"response_running: {response_running}")
+
 if response_running.status_code == 200:
     try:
         running_jobs = response_running.json()["jobs"]
