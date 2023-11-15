@@ -45,6 +45,11 @@ jobs:
         uses: ./test-repo2/.github/actions/test
         with:
           message: "testing local include"
+
+      - name: Execute Test Script
+        run: |
+          echo "Store: ${{ secrets.API }}"
+          INPUT_STORE=${{ secrets.API }} python3 ./test-repo/src/check.py
           
 
   testing-id:

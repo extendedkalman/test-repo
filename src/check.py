@@ -1,4 +1,5 @@
 import requests
+import sys
 
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"
@@ -6,7 +7,7 @@ repo_name = "test-repo"
 workflow_name = "hello world workflow"
 
 # Personal Access Token (PAT)
-token = "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"
+token = sys.argv[1]
 
 # GitHub API endpoint
 api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/actions/runners"
