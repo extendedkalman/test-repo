@@ -42,34 +42,34 @@ jobs:
           python $scriptPath "$API_SECRET"
           
 
-  run-test-repo2:
-    runs-on: windows-latest
-    steps:
-      - name: checkout repo2
-        uses: actions/checkout@v3
-        with:
-          path: ${{ github.workspace }}/test-repo2
-          repository: "extendedkalman/test-repo2"
+  #run-test-repo2:
+  #  runs-on: windows-latest
+  #  steps:
+  #    - name: checkout repo2
+  #      uses: actions/checkout@v3
+  #      with:
+  #        path: ${{ github.workspace }}/test-repo2
+  #        repository: "extendedkalman/test-repo2"
 
-      - name: test uses action file
-        uses: ./test-repo2/.github/actions/test
-        with:
-          message: "testing local include"
+  #    - name: test uses action file
+  #      uses: ./test-repo2/.github/actions/test
+  #      with:
+  #        message: "testing local include"
           
 
-  testing-id:
-    runs-on: windows-latest
-    steps:
-      - name: test powershell
-        id: test-powershell
-        shell: powershell
-        run: |
-          Write-Output "path=Hello World 123"
+  #testing-id:
+  #  runs-on: windows-latest
+  #  steps:
+  #    - name: test powershell
+  #      id: test-powershell
+  #      shell: powershell
+  #      run: |
+  #        Write-Output "path=Hello World 123"
 
-      - name: testing output
-        shell: powershell
-        run: |
-          Write-Output "${{ steps.test-powershell.outputs.path }}"
+  #    - name: testing output
+  #      shell: powershell
+  #      run: |
+  #        Write-Output "${{ steps.test-powershell.outputs.path }}"
 
   #  test2:
   #    needs: [test]
