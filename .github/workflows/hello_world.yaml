@@ -27,9 +27,13 @@ jobs:
           python-version: 3.7
 
       - name: Run Python Script
+        id: get_test
         run: |
           $scriptPath=.\test-repo\src\hello.py
           python $scriptPath
+
+      - name: Print the square
+        run: echo "${{ steps.get_test.outputs.test_report }}"
 
       - name: test uses action file
         uses: ./test-repo/.github/actions/test
@@ -45,7 +49,7 @@ jobs:
       #    python $scriptPath
 
       #- name: Print the square
-      #  run: echo "${{ steps.get_square.outputs.num_squared }}"
+      #  run: echo "${{ steps.get_square.outputs.test_repot }}"
 
   #run-test-repo2:
   #  runs-on: windows-latest
