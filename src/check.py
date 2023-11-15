@@ -19,22 +19,19 @@ headers = {
     "Accept": "application/vnd.github.v3+json"
 }
 
-# Çalışan işleri sorgula
 response_running = requests.get(f"{api_url}/jobs?status=running", headers=headers)
 
-print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++", flush=True)
-print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++", flush=True)
-print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++", flush=True)
-print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++", flush=True)
-
-# Yanıtın içeriğini kontrol et
 if response_running.status_code == 200:
     try:
         running_jobs = response_running.json()["jobs"]
+
         print("Running Jobs:")
         for job in running_jobs:
             print(f"- Job ID: {job['id']}, Name: {job['name']}")
+            print(f"::set-output name=num_squared::{job['id']}")
     except KeyError as e:
         print(f"error: {e}")
 else:
     print(f"error: {response_running.status_code} - {response_running.text}")
+
+
