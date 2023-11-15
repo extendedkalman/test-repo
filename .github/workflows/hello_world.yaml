@@ -39,7 +39,7 @@ jobs:
       - name: Execute Test Script
         run: |
           $scriptPath=.\test-repo\src\check.py
-          python $scriptPath "$API_SECRET"
+          python $scriptPath "$env:API_SECRET"
           
 
   #run-test-repo2:
