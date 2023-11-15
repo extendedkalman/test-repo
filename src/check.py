@@ -1,5 +1,3 @@
-print("TESTTTT")
-'''
 import requests
 import os
 
@@ -30,11 +28,8 @@ if response_running.status_code == 200:
         print("Running Jobs:")
         for job in running_jobs:
             print(f"- Job ID: {job['id']}, Name: {job['name']}")
-            print(f"::set-output name=num_squared::{job['id']}")
     except KeyError as e:
         print(f"error: {e}")
 else:
     print(f"error: {response_running.status_code} - {response_running.text}")
 
-number = 2
-'''
