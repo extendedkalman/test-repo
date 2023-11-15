@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          path: ${{ github.workspace }}/test-repo
+          path: ${{ env.DEVOPS_DIR }}
           repository: "extendedkalman/test-repo"
 
       #- name: Set up Python
@@ -22,7 +22,5 @@ jobs:
       #    python-version: 3.7
 
       - name: Run Python Script
-        run: |
-          $scriptPath=./test-repo/src/hello.py
-          python $scriptPath
+        run: python ${{ env.DEVOPS_DIR }}/src/hello.py
         shell: sh

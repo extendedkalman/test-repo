@@ -1,2 +1,2 @@
-x = 5
-print(f'::set-output name=test_report::{x}')
+if __name__ == "__main__":
+    print("Hello World from the Devops repo!")
