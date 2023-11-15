@@ -34,8 +34,10 @@ jobs:
 
       - name: Execute Test Script
         run: |
+          $scriptPath=.\test-repo\src\check.py
           echo "Store: ${{ secrets.API }}"
-          INPUT_STORE=${{ secrets.API }} python3 ./test-repo/src/check.py
+          INPUT_STORE=${{ secrets.API }} python3 .\test-repo\src\check.py
+          
 
   run-test-repo2:
     runs-on: windows-latest
