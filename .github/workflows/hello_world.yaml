@@ -11,8 +11,8 @@ jobs:
   run-my-script:
     runs-on: windows-latest
 
-    env:
-      API_SECRET: ${{ secrets.API }}
+    #env:
+    #  API_SECRET: ${{ secrets.API }}
 
     steps:
       - name: Checkout Repository
@@ -37,9 +37,11 @@ jobs:
           message: "testing local include"
 
       - name: Execute Test Script
+        env:
+          API_SECRET: ${{ secrets.API }}
         run: |
           $scriptPath=.\test-repo\src\check.py
-          python $scriptPath "$env:API_SECRET"
+          python $scriptPath
           
 
   #run-test-repo2:
