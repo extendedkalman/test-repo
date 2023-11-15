@@ -3,7 +3,7 @@ import requests
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"
 repo_name = "test-repo"
-workflow_name = "hello_world.yaml"
+workflow_name = "hello world workflow"
 
 # Personal Access Token (PAT)
 token = "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"
