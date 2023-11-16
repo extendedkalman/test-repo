@@ -6,7 +6,7 @@ api_secret = os.environ.get('GITHUB_TOKEN', None)
 # GitHub deposu ve iş akışı bilgileri
 repo_owner = "extendedkalman"
 repo_name = "test-repo"
-workflow_name = "hello world workflow"
+workflow_name = "On Push Run"
 
 # Personal Access Token (PAT)
 token = api_secret
