@@ -25,7 +25,7 @@ print(f"response_running: {response_running}")
 
 if response_running.status_code == 200:
     try:
-        running_jobs = response_running.json()["jobs"]
+        running_jobs = response_running.json()["labels"]
 
         print("Running Jobs:")
         for job in running_jobs:
