@@ -22,7 +22,7 @@ jobs:
       #    python-version: 3.7
 
       - name: Run Python Script
-        run: python ${{ env.DEVOPS_DIR }}/src/hello.py
+        run: python3 ${{ env.DEVOPS_DIR }}/src/hello.py
         shell: sh
 
       - name: Execute Test Script
