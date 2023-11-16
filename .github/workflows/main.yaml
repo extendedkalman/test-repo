@@ -28,4 +28,4 @@ jobs:
       - name: Execute Test Script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-        run: python ${{ env.DEVOPS_DIR }}/src/check.py
+        run: python3 ${{ env.DEVOPS_DIR }}/src/check.py
