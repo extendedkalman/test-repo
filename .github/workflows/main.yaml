@@ -29,3 +29,34 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API}}
         run: python3 ${{ env.DEVOPS_DIR }}/src/check.py
+
+  testrunnerkeyword:
+    name: test runner
+    runs-on: self-hosted
+    steps:
+      - name: test runner keyword
+        run: |
+          echo '${{ toJson(github) }}'
+          echo '${{ toJson(runner) }}'
+
+  testing-webhook:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: "test"
+        run: |
+          $uri = "https://api.github.com/repos/extendedkalman/test-repo/dispatches"
+          $headers = @{
+              Authorization = "Bearer ${{ secrets.MYSECRET }}"
+              Accept = "application/vnd.github.everest-preview+json" 
+          }
+          
+          $body = @{
+              event_type = "my-custom-event" 
+          }
+          
+          $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body ($body | ConvertTo-Json)
+          Write-Output $response
+          

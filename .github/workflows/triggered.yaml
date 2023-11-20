@@ -1,0 +1,19 @@
+name: Second Workflow
+
+on:
+  repository_dispatch:
+    types:
+      - my-custom-event
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run Second Workflow
+      run: |
+        # Your build and deployment commands go here
+        echo "Running Second Workflow"
