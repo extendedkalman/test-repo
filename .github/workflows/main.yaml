@@ -45,6 +45,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: write output
+        run: |
+          Write-Output ${{ secrets.GITHUB_TOKEN }}
+
       - name: "test"
         run: |
           $uri = "https://api.github.com/repos/extendedkalman/test-repo/dispatches"
