@@ -45,22 +45,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: write output
+      - name: write outputt
         run: |
           Write-Output ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "test"
-        run: |
-          $uri = "https://api.github.com/repos/extendedkalman/test-repo/dispatches"
-          $headers = @{
-              Authorization = "Bearer ${{ secrets.MYSECRET }}"
-              Accept = "application/vnd.github.everest-preview+json" 
-          }
+      #- name: "test"
+      #  run: |
+      #    $uri = "https://api.github.com/repos/extendedkalman/test-repo/dispatches"
+      #    $headers = @{
+      #        Authorization = "Bearer ${{ secrets.MYSECRET }}"
+      #        Accept = "application/vnd.github.everest-preview+json"
+      #    }
           
-          $body = @{
-              event_type = "my-custom-event" 
-          }
+      #    $body = @{
+      #        event_type = "my-custom-event"
+      #    }
           
-          $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body ($body | ConvertTo-Json)
-          Write-Output $response
+      #    $response = Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body ($body | ConvertTo-Json)
+      #    Write-Output $response
           
