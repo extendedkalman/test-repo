@@ -2,6 +2,8 @@ name: hello world workflow
 
 on:
   repository_dispatch:
+    types: [webhooktest]
+  
 
 jobs:
   run-my-script:
