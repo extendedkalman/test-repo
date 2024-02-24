@@ -1,1 +1,13 @@
+name: hello world workflow
 
+on:
+  repository_dispatch:
+
+jobs:
+  run-my-script:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      
